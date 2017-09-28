@@ -7,6 +7,7 @@ import random
 # Also keep profile of user's car, input miles and condition, last oil change, last brake service, etc, & set reminders for future service
 
 # Input symptoms and algorithm would match possible problem to solution; if solution doesn't work, go to next possible solution.
+# Input tools available to use, so as to only run tests according to what tools are available
 
 
 # ---Class Definitions
@@ -22,10 +23,48 @@ class MyCar:
     def get_pump(self):
         return self.pumpok
 
-    #add attributes for tools like hasVoltmeter, hasSparktester, hasComptester, hasFueltester,
+# add My Person class with attributes for tools like hasVoltmeter, hasSparktester, hasComptester, hasFueltester
+# run tests only if equipped with these tools, otherwise offer alternative
+
+class MyPerson:
+    def __init__(self, hasVolt, hasSpark, hasComp, hasFuel):
+        self.hasVolt = hasVolt
+        self.hasSpark = hasSpark
+        self.hasComp = hasComp
+        self.hasFuel = hasFuel
+
 
 # ---Global Functions
 
+def check_tools():
+    print("Firstly, let's take account of what tools you have...\n")
+
+    x = input("Do you have a Voltmeter?\n")
+    if x.lower() == 'y':
+        me.hasVolt = True
+        print("Voltmeter set to ", me.hasVolt, "\n")
+    else:
+        print("Voltmeter set to ", me.hasVolt, "\n")
+    x = input("Do you have a Spark Plug Wire Tester?\n")
+    if x.lower() == 'y':
+        me.hasSpark = True
+        print("Spark Plug Wire Tester set to ", me.hasSpark, "\n")
+    else:
+        print("Spark Plug Wire Tester set to ", me.hasSpark, "\n")
+    x = input("Do you have a Compression Tester?\n")
+    if x.lower() == 'y':
+        me.hasComp = True
+        print("Compression Tester set to ", me.hasComp, "\n")
+    else:
+        print("Compression Tester set to ", me.hasComp, "\n")
+    x = input("Do you have a Fuel Pressure Tester\n")
+    if x.lower() == 'y':
+        me.hasFuel = True
+        print("Fuel Pressure Tester set to ", me.hasFuel, "\n")
+    else:
+        print("Fuel Pressure Tester set to ", me.hasFuel, "\n")
+
+    print("Excellent, moving on!\n")
 
 def check_corrosion(answer):
     if answer == 'no' or answer == 'No' or answer == 'n' or answer == 'N':
@@ -83,7 +122,7 @@ def no_power_troubleshoot():
             no_power_troubleshoot()
     elif x == 'n' or x == 'N':
         print("This one's tricky!\n")
-        # ecuDiag()
+        ecuDiag()
     else:
         print("Come again?\n")
         no_power_troubleshoot()
@@ -120,7 +159,7 @@ def turn_over():
         # Fuel Pressure
         # Spark Test
         # Compression test
-        # Alternator
+
 
     elif x == 'd' or x == 'D':
         print("If Pump Ok is False, start with Fuel Pump Voltage Test")
@@ -132,7 +171,6 @@ def turn_over():
 
         # Battery Test
         # MAFS Check
-        # Alternator
         # Spark Test
         # Compression
         # Fuel Pressure
@@ -148,7 +186,7 @@ def turn_over():
         # Fuel Pressure
 
     elif x == 'f' or x == 'F':
-        print("Awesome, exiting!")
+        print("Awesome, exiting!\n")
 
     else:
         print("Come again?\n")
@@ -190,8 +228,6 @@ def jumpstart2():
     elif x.lower() == 'b':
         print("Oh No! Let's check things out then...\n")
 
-        # Alternator
-
         while car.pumpok is False:
             # fuel_pump_volt()
             pass
@@ -208,15 +244,66 @@ def jumpstart2():
         print("Come again?\n")
         jumpstart2()
 
+
+def ecuDiag():
+    print("It might be an ECU issue.")
+    print("Check ECU...\n")
+
+    input()
+
+def check_starter():
+    print("Might be the Starter.")
+    print("Check Starter...\n")
+
+    input()
+
+def fuel_pump_volt():
+    print("Might be the Fuel Pump.")
+    print("Check Fuel Pump Voltage...\n")
+
+    input()
+
+def batt_test():
+    print("Might be the Battery.")
+    print("Check the Battery...\n")
+    input()
+
+def mafs_test():
+    print("Might be the MAF sensor.")
+    print("Check the MAF sensor...\n")
+    input()
+
+def alt_test():
+    print("Might be the alternator.")
+    print("Check the Alternator...\n")
+    input()
+
+def spark_test():
+    print("Might be the Spark Plugs.")
+    print("Check the Spark Plugs...\n")
+    input()
+
+def comp_test():
+    print("Might be low compression.")
+    print("Check Cylinder Compression...\n")
+    input()
+
+def fuel_pump_press():
+    print("Might be low fuel pressure or clogged fuel filter.")
+    print("Check the Fuel Pressure...\n")
+
+
 # ---Start of Program---
 
-
+me = MyPerson(False, False, False, False)
 car = MyCar(True, False)
 
 print("Oh No! Your car isn't starting? That's ok, I'm here to help!\n")
+check_tools()
+
 print("Is the battery plugged in with absolutely no corrosion? \n")
 
-check_corrosion(input("Type Yes or No and Enter"))
+check_corrosion(input("Type Yes or No and Enter \n"))
 
 print("Insert the key and turn to first position, prime the fuel pump, and get the electronics on.\n")
 print("Do you get power to everything and hear the fuel pump prime?")
@@ -230,7 +317,7 @@ second_question(input("Select the Best Answer \n"))
 turn_over()
 
 print("Congratulations! I hope this program helped you fix your car!")
-print("If it didn't, well, I'm sorry, this is still in Alpha stages.\n")
+print("If it didn't, oh well, I'm sorry, this app is still in early stages.\n")
 print("Support development of this app by leaving feedback. Thanks for using CarTroubleshooter 0.1a\n\n")
 
 print("End of Line...")
@@ -253,48 +340,3 @@ input()
 # If Yes, but another issue, go to SecondQuestion
 # If No, go to SorryPrompt
 
-
-
-
-
-
-# FullDiagnose
-
-
-
-
-
-
-
-
-
-
-
-# GasDiagnose
-
-
-
-
-
-
-
-
-
-# ElecDiagnose
-
-
-
-
-
-
-
-
-
-# ItWorks
-
-
-
-
-
-
-# SorryPrompt
