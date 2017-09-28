@@ -9,20 +9,24 @@ import random
 # Input symptoms and algorithm would match possible problem to solution; if solution doesn't work, go to next possible solution.
 
 
-
 # ---Class Definitions
-class MyCar:
-    def __init__(self, fuseok,pumpok):
-        self.fuseok = fuseok
-        self.pumpok = pumpok
 
-    def set_pump(self,pumpok):
+class MyCar:
+    def __init__(self, pumpok, carFixed):
+        self.pumpok = pumpok
+        self.carFixed = carFixed
+
+    def set_pump(self, pumpok):
         self.pumpok = pumpok
 
     def get_pump(self):
         return self.pumpok
 
+    #add attributes for tools like hasVoltmeter, hasSparktester, hasComptester, hasFueltester,
+
 # ---Global Functions
+
+
 def check_corrosion(answer):
     if answer == 'no' or answer == 'No' or answer == 'n' or answer == 'N':
         print("That could be a problem! Make a paste out of baking soda and distilled water and apply.\n")
@@ -42,7 +46,7 @@ def second_question(answer):
     elif answer == 'b' or answer == 'B':
         print("No worries, we'll come back to this later.\n")
         car.set_pump(False)
-        print("Pump OK set to ", car.get_pump())
+        print("Pump OK set to ", car.get_pump(), "\n")
     elif answer == 'c' or answer == 'C':
         print("Great! Moving on!\n")
     else:
@@ -79,10 +83,11 @@ def no_power_troubleshoot():
             no_power_troubleshoot()
     elif x == 'n' or x == 'N':
         print("This one's tricky!\n")
-        #ecuDiag()
+        # ecuDiag()
     else:
         print("Come again?\n")
         no_power_troubleshoot()
+
 
 def turn_over():
     print("Try starting the car now. What happened?\n")
@@ -107,12 +112,40 @@ def turn_over():
         print("Check the Fuses, If Pump Ok is false, start with Fuel Pump voltage test")
         print("If Pump Ok is true, go right into MAFS Check, Fuel Pressure check, then Spark, and compression test")
 
+        while car.pumpok is False:
+            # fuel_pump_volt()
+            pass
+
+        # MAFS check
+        # Fuel Pressure
+        # Spark Test
+        # Compression test
+        # Alternator
+
     elif x == 'd' or x == 'D':
         print("If Pump Ok is False, start with Fuel Pump Voltage Test")
         print("If Pump Ok is True, start with MAFS Check, Spark & compression, then Fuel Pressure")
 
+        while car.pumpok is False:
+            # fuel_pump_volt()
+            pass
+
+        # Battery Test
+        # MAFS Check
+        # Alternator
+        # Spark Test
+        # Compression
+        # Fuel Pressure
+
     elif x == 'e' or x == 'E':
         print("Mafs check,  Spark & Compression, Fuel Pressure")
+
+        # Battery Test
+        # MAFS check
+        # Alternator
+        # Spark Test
+        # Compression
+        # Fuel Pressure
 
     elif x == 'f' or x == 'F':
         print("Awesome, exiting!")
@@ -121,18 +154,64 @@ def turn_over():
         print("Come again?\n")
         turn_over()
 
+
 def jumpstart():
-    print("A: It still just clicks")  # will go to check_starter
-    print("B: It does something else")  # goes back to turn_over()
-    print("C: It Works!")  # exit function
+    print("A: It still just clicks")
+    print("B: It does something else")
+    print("C: It Works!\n")
+
+    x = input("Please Choose: ")
+    if x.lower() == 'a':
+        print("Looks like it's the starter, let's check that out. \n")
+        # check_starter
+
+    elif x.lower() == 'b':
+        print("Ok, let's go back then...\n")
+        turn_over()
+
+    elif x.lower() == 'c':
+        print("Awesome!!! \n")
+
+    else:
+        print("Come again?\n")
+        jumpstart()
+
 
 def jumpstart2():
-    print("A: It just clicks now")  # will go to check_starter
-    print("B: Still not starting!")  # wil go to Fuel Pump Voltage if Pumpok false, MAFS Check, Fuel Pump Pressure check
+    print("A: It just clicks now")
+    print("B: Still not starting!")
+    print("C: It Works!")
 
+    x = input("Please Choose: ")
+    if x.lower() == 'a':
+        print("Looks like it's the starter, let's check that out. \n")
+        # check_starter
+
+    elif x.lower() == 'b':
+        print("Oh No! Let's check things out then...\n")
+
+        # Alternator
+
+        while car.pumpok is False:
+            # fuel_pump_volt()
+            pass
+
+        # Mafs check
+        # Fuel Pressure
+        # Spark
+        # Compression
+
+    elif x.lower() == 'c':
+        print("Awesome!!! \n")
+
+    else:
+        print("Come again?\n")
+        jumpstart2()
 
 # ---Start of Program---
-car = MyCar(True, True)
+
+
+car = MyCar(True, False)
 
 print("Oh No! Your car isn't starting? That's ok, I'm here to help!\n")
 print("Is the battery plugged in with absolutely no corrosion? \n")
@@ -146,24 +225,16 @@ print("A: I don't get any power.")
 print("B: I get power, but I can't hear the fuel pump prime.")
 print("C: I get power and can hear the fuel pump prime.\n")
 
-second_question(input("Select the Best Answer "))
-
-
+second_question(input("Select the Best Answer \n"))
 
 turn_over()
 
-print("Congratulations! I hope this program helped you fix your car! If it didn't, well, I'm sorry, this is still in Alpha")
-print("Support development of this app by leaving feedback. Thanks for using CarTroubleshooter 0.1a\n")
+print("Congratulations! I hope this program helped you fix your car!")
+print("If it didn't, well, I'm sorry, this is still in Alpha stages.\n")
+print("Support development of this app by leaving feedback. Thanks for using CarTroubleshooter 0.1a\n\n")
 
 print("End of Line...")
-
-
-
-
-# Did this fix the issue?
-# If yes, go to ItWorks
-# If yes, but another problem, Go to SecondQuestion
-# If no, go to EcuDiag
+input()
 
 
 
@@ -181,36 +252,6 @@ print("End of Line...")
 # If Yes, Go to ItWorks
 # If Yes, but another issue, go to SecondQuestion
 # If No, go to SorryPrompt
-
-
-
-
-
-
-
-
-
-
-
-# FuseNotice
-
-
-
-
-
-
-# TapStarter
-
-
-
-
-
-
-
-
-# JumpStart
-
-
 
 
 
