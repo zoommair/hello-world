@@ -152,13 +152,13 @@ def turn_over():
         print("If Pump Ok is true, go right into MAFS Check, Fuel Pressure check, then Spark, and compression test")
 
         while car.pumpok is False:
-            # fuel_pump_volt()
-            pass
+            fuel_pump_volt()
+            break
 
-        # MAFS check
-        # Fuel Pressure
-        # Spark Test
-        # Compression test
+        mafs_test()  # MAFS check
+        fuel_pump_press()  # Fuel Pressure
+        spark_test()  # Spark Test
+        comp_test()  # Compression test
 
 
     elif x == 'd' or x == 'D':
@@ -166,27 +166,28 @@ def turn_over():
         print("If Pump Ok is True, start with MAFS Check, Spark & compression, then Fuel Pressure")
 
         while car.pumpok is False:
-            # fuel_pump_volt()
-            pass
+            fuel_pump_volt()
+            break
 
-        # Battery Test
-        # MAFS Check
-        # Spark Test
-        # Compression
-        # Fuel Pressure
+        batt_test()  # Battery Test
+        mafs_test()  # MAFS Check
+        spark_test()  # Spark Test
+        comp_test()  # Compression
+        fuel_pump_press()  # Fuel Pressure
 
     elif x == 'e' or x == 'E':
         print("Mafs check,  Spark & Compression, Fuel Pressure")
 
-        # Battery Test
-        # MAFS check
-        # Alternator
-        # Spark Test
-        # Compression
-        # Fuel Pressure
+        batt_test()  # Battery Test
+        mafs_test()  # MAFS check
+        alt_test()  # Alternator
+        spark_test()  # Spark Test
+        comp_test()  # Compression
+        fuel_pump_press()  # Fuel Pressure
 
     elif x == 'f' or x == 'F':
         print("Awesome, exiting!\n")
+        car.carFixed = True
 
     else:
         print("Come again?\n")
@@ -201,7 +202,7 @@ def jumpstart():
     x = input("Please Choose: ")
     if x.lower() == 'a':
         print("Looks like it's the starter, let's check that out. \n")
-        # check_starter
+        check_starter()
 
     elif x.lower() == 'b':
         print("Ok, let's go back then...\n")
@@ -223,19 +224,19 @@ def jumpstart2():
     x = input("Please Choose: ")
     if x.lower() == 'a':
         print("Looks like it's the starter, let's check that out. \n")
-        # check_starter
+        check_starter()
 
     elif x.lower() == 'b':
         print("Oh No! Let's check things out then...\n")
 
         while car.pumpok is False:
-            # fuel_pump_volt()
-            pass
+            fuel_pump_volt()
+            break
 
-        # Mafs check
-        # Fuel Pressure
-        # Spark
-        # Compression
+        mafs_test()  # Mafs check
+        fuel_pump_press()  # Fuel Pressure
+        spark_test()  # Spark
+        comp_test()  # Compression
 
     elif x.lower() == 'c':
         print("Awesome!!! \n")
@@ -249,7 +250,42 @@ def ecuDiag():
     print("It might be an ECU issue.")
     print("Check ECU...\n")
 
-    input()
+    print("This one is tricky, you will need the wiring diagram from your service manual.")
+    print("IF you are uncomfortable with this, DO NOT PROCEED, have your car towed to a technician.")
+    print("If you are comfortable, follow the wiring diagram, from the battery to the ECU.\n"
+          "Use your service manual to find where the ECU is located, sometimes under the glove box\n"
+          "Unplug the ECU and use the voltmeter to test the pin that provides power to the ECU.\n\n"
+          "Is the ECU getting power?\n")
+    x = input("Y or N")
+    if x.lower() == 'y':
+        print("Replace ECU\n")
+        # replace_ecu()
+    elif x.lower() == 'n':
+        print("Replace Harness\n")
+        # replace_harness()
+    else:
+        print("Come again?\n")
+        ecuDiag()
+
+    print("Do you have power now?\n")
+
+    x = input("Y or N\n")
+    while True:
+        if x.lower() == 'y':
+            print("Awesome! Let's try starting!\n")
+            car.pumpok = False
+            turn_over()
+            break
+        elif x.lower() == 'n':
+            print("I'm sorry, if there's still no power, I'm at a loss of words...\n"
+                  "If the fuses, battery, ecu, and wiring harness are all OK, then you should have at least electricity.\n"
+                  "I'm Sorry, but looks like We're out of the scope of what I can offer at the moment....\n")
+            car.carFixed = True
+            break
+        print("Come again big fudge?\n")
+        x = input("Y or N\n")
+
+    input("Exiting ECU Diag - Press Enter to continue...\n")
 
 def check_starter():
     print("Might be the Starter.")
@@ -303,7 +339,7 @@ check_tools()
 
 print("Is the battery plugged in with absolutely no corrosion? \n")
 
-check_corrosion(input("Type Yes or No and Enter \n"))
+check_corrosion(input("Type Yes or No, then Enter \n"))
 
 print("Insert the key and turn to first position, prime the fuel pump, and get the electronics on.\n")
 print("Do you get power to everything and hear the fuel pump prime?")
@@ -314,7 +350,9 @@ print("C: I get power and can hear the fuel pump prime.\n")
 
 second_question(input("Select the Best Answer \n"))
 
-turn_over()
+while car.carFixed is False:
+    turn_over()
+    break
 
 print("Congratulations! I hope this program helped you fix your car!")
 print("If it didn't, oh well, I'm sorry, this app is still in early stages.\n")
@@ -326,17 +364,5 @@ input()
 
 
 
-# EcuDiag
-# This one is tricky, you will need to trace the wires leading from the positive battery terminal to the ECU.
-# IF you are uncomfortable with this, DO NOT PROCEED, have your car towed to a technician.
-# If you are comfortable, trace the wires to the ECU and use the Voltmeter to see the ECU is getting power.
 
-# Is the ECU getting power?
-# If yes, Go to Replace ECU
-# If no, Go to Replace wiring harness.
-
-# Did this fix the issue?
-# If Yes, Go to ItWorks
-# If Yes, but another issue, go to SecondQuestion
-# If No, go to SorryPrompt
 
