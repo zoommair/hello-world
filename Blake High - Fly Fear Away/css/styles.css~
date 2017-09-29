@@ -1,0 +1,375 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	color: #000066;
+	margin: 0;
+	background-color: #ccccff;
+}
+
+.maincontainer {
+	position: relative;
+	max-width: 1440px;
+	margin: 0 auto;
+	box-shadow: 3px 0px 2px #888888, -2px 0px 1px #888888;
+	padding: 0;
+	
+}
+
+header {
+	z-index: 999;
+	position: fixed;
+	margin: 0;
+	background-color: #000066;
+	width: 100%;
+	max-width: 1440px;
+	box-shadow: 0px 1px 10px #888888;
+}
+header img {
+	height: 50px;
+}
+header h1{
+	margin: 0;
+	vertical-align: top;
+	padding-left: 5px;
+	display: inline-block;
+	white-space: nowrap;
+	color: #ccccff;
+	font-size: 24px;
+}
+
+
+nav {
+	float: right;
+	display: inline-block;
+	padding-top: 5px;
+	text-align: right;
+	margin-right: 10px;
+}
+
+
+
+nav ul {
+	white-space: nowrap;
+	margin: 0;
+	list-style-type: none;
+}
+
+nav ul li {
+	display: inline-block;
+	padding: 5px 10px;
+}
+
+nav ul li a {
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+#hero {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	position: relative;
+	padding-top: 50px;
+	background-color: white;
+	width: 100%; 
+	background: url("../img/airplane1.png") no-repeat 50% 50% fixed;
+	background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-webkit-background-size: cover; 
+}
+
+
+
+#hero .imgLiquid{
+	display: inline-block;
+	margin-left: 1%;
+	height: 575px;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	
+}
+
+#hero img{
+	margin-bottom: 0;
+	padding-bottom: 0;
+	max-height: 500px;
+	object-fit: contain;	
+	
+}
+
+
+#hero .tagline {
+	text-align: right;
+	position: absolute;
+	display: inline-block;
+	right: 3%;
+	top: 75px;
+	
+}
+
+#hero h1 {
+	display: inline-block;
+	text-shadow: 1px 1px 10px #888888;
+	color:  #000066;
+	font-size: 50px;
+	letter-spacing: 3px;
+	font-style: italic;
+	font-weight: bold;
+	
+}
+
+#hero .videobox {
+	margin-right: 0;
+	margin-left: auto;
+	height: 300px;
+	width: 500px;
+	background-color: lightgray;
+	box-shadow: 1px 1px 10px #888888;
+}
+
+#hero h2 {
+	//text-shadow: 1px 1px 1px #888888;
+	margin-left: 10px;
+	margin-right: 5px;
+	color:  black;
+	letter-spacing: 1px;
+	display: inline-block;
+	padding: 1px 15px 1px 15px; 
+	border: 3px solid black;
+	box-shadow: 0px 5px 5px #000000;
+	border-radius: 1px;
+	background-color: #ffc801;
+}
+
+.sectioncontainer {
+	position: relative;
+	width: 100%;
+	text-align: center;
+	background-color: #ccccff;
+	margin: 0;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	
+}
+
+.sectioncontainer h1 {
+	color: #000066;
+	font-size: 35px;
+	letter-spacing: 5px;
+}
+
+.sectioncontainer h1:after {
+	content: '...';
+	display: block;
+	width: 85px;
+	
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 45px;
+	margin: 0 auto;
+}
+
+.sectioncontainer2 {
+	position: relative;
+	width: 100%;
+	text-align: center;
+	background-color: white;
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+
+.sectioncontainer2 h1 {
+	color: #000066;
+	font-size: 35px;
+	letter-spacing: 5px;
+}
+
+.sectioncontainer2 h1:after {
+	content: '...';
+	display: block;
+	width: 85px;
+	
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 45px;
+	margin: 0 auto;
+	
+}
+
+.row {
+	clear: both;
+	width: 100%;
+	
+	padding-top: 1px;
+	position: relative;
+}
+
+
+.col {
+	vertical-align: top;
+	display: inline-block;
+	max-width:30%;
+	min-width: 300px;
+	
+}
+
+.col p {
+	width: 95%;
+}
+
+.col img {
+	border-radius: 50%;
+	max-width: 250px;
+	max-height: 175px;
+	box-shadow: 2px 2px 10px #888888;
+}
+
+
+
+.col2 {
+	vertical-align: top;
+	text-align: left;
+	display: inline-block;
+	max-width: 60%;
+	min-width: 300px;
+	padding-right: 5px;
+}
+
+.col2 img {
+	margin-left: 10px;
+	//border-radius: 10px;
+	//box-shadow: 2px 2px 10px #888888;
+}
+
+.littlebox {
+	display: inline-block;
+	max-width: 18%;
+	vertical-align: top;
+	min-width: 150px;
+}
+
+.littlebox img {
+	-webkit-filter: drop-shadow(5px 5px 5px #888888);
+	filter: drop-shadow(5px 5px 5px #888888);
+}
+
+.littlebox p {
+	
+	max-width:95%;
+}
+
+.blogbox {
+	text-align: left;
+	padding: 5px;
+	
+}
+
+.blogbox h4 {
+	display: inline-block;
+	margin: 0;
+}
+.blogbox h5 {
+	display: inline-block;
+	margin: 0;
+}
+
+footer {
+	position: relative;
+	background-color: #000066;
+	color: #ccccff;
+	text-align: center;
+	margin: 0 auto;
+	clear: both;
+	padding-top: 20px;
+	padding-bottom: 5px;
+	width: 100%;
+	white-space: nowrap;
+	
+	background: url("../img/blue-printfooter.png") no-repeat 50% 50% fixed;
+	background-size: 100%;
+	-moz-background-size: 100%;
+	-o-background-size: 100%;
+	-webkit-background-size: 100%;
+	
+	
+}
+
+footer .contact {
+	float: left;
+	text-align: left;
+	margin-left: 20px;
+	bottom: 10px;
+	display: inline-block;
+}
+
+.contact h3 {
+	margin: 0;
+	padding-bottom: 2px;
+}
+
+footer .social {
+	padding-top: 20px;
+	//border-radius: 10px;
+	//background-color: #ccccff;
+	bottom: 10px;
+	display: inline-block;
+	
+}
+
+footer img {
+	-webkit-filter: drop-shadow(1px 1px 5px #888888);
+	filter: drop-shadow(5px 5px 5px #888888);
+	padding-left: 2%;
+	padding-right: 2%;
+}
+
+footer .copyright {
+	float: right;
+	margin-right: 10px;
+	bottom: 10px;
+	display: inline-block;
+	text-align: left;
+}
+
+footer h2 {
+	text-shadow: 1px 1px 1px #888888;
+	margin-left: 10px;
+	color:  #ccccff;
+	letter-spacing: 1px;
+	display: inline-block;
+	padding: 1px 15px 1px 15px; 
+	border: 3px solid #ccccff;
+	box-shadow: 1px 1px 10px #888888;
+	border-radius: 10px;
+}
+
+.clear {
+	position: relative;
+	display: block;
+	height: 1px;
+	clear: both;
+	width: 100%;
+}
+
+.addpad {
+	padding-top: 20px;
+}
+
+.button  h2 {
+	//text-shadow: 1px 1px 1px #888888;
+	margin-left: 10px;
+	margin-right: 5px;
+	color:  black;
+	letter-spacing: 1px;
+	display: inline-block;
+	padding: 1px 15px 1px 15px; 
+	border: 3px solid black;
+	box-shadow: 0px 5px 5px #000000;
+	border-radius: 1px;
+	background-color: #ffc801;
+}
