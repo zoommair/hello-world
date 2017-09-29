@@ -1,0 +1,213 @@
+body {
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	background: url("../img/background.jpg") no-repeat 50% 50% fixed;
+	background-color: darkgray;
+	background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-webkit-background-size: cover;
+	
+}
+
+header {
+	position: fixed;
+	width: 100%;
+	padding: 10px 0 10px 0;
+	z-index: 100;
+}
+
+nav ul {
+	text-align: center;
+	margin: 0;
+	
+}
+
+nav ul li {
+	display: inline-block;
+	list-style-type: none;
+	color: lightgray;
+	padding: 5px 15px;
+}
+
+nav ul li a {
+	color: lightgray;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+
+nav ul li a:hover {
+	color: white;
+	border-top: 1px solid white;
+	border-bottom: 2px solid white;
+	
+}
+
+nav ul li a:active {
+	color: red;
+	border-color: red;
+}
+
+#hero {
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+	
+}
+
+#hero .heropic {
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+	
+		
+}
+
+.heropic img {
+	width: 100%;
+	height: 100%;
+}
+
+#hero .herocontent {
+	position: absolute;
+	top: 15%;
+	left: 15%;
+}
+
+#hero .herocontent h1 {
+	color: lightgray;
+	text-transform: uppercase;
+	letter-spacing: 10px;
+	font-size: 35px;
+}
+
+#hero .herocontent h2 {
+	display: block;
+	text-align: center;
+	color: lightgray;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-size: 20px;
+	padding: 5px 0px 5px 0px;
+	border: 2px solid lightgray;
+	border-radius: 10px;
+}
+
+#hero .herocontent h2:hover {
+	background: rgba(255, 255, 255, 1);
+	color: black;
+	border-color: none;
+	opacity: .5;
+}
+
+#hero .herowidgets {
+	position: absolute;
+	display: inline-block;
+	width: 90%;
+	margin: 0 auto;
+	top: 60%;
+	left: 9%;
+	
+	
+}
+
+#hero .herowidgcol {
+	margin: 0 auto;
+	position: relative;
+	float: left;
+	display: inline-block;
+	width: 32%;
+	padding-right: .5%;
+			
+}
+
+.row {
+	clear: both;
+	margin: 50px;
+		
+}
+
+.fullcol {
+	border: 2px solid black;
+	background: rgba(255, 255, 255, .7);
+	margin: 0 auto;
+	width: 50%;
+	color: #222222;
+	padding-left: 5px;
+	padding-bottom: 2px;
+	padding-right: 5px;
+	box-shadow: 3px 3px 10px #222222;
+	
+}
+
+.fullcol h1 {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-left: 5px;
+	margin-top: 10px;
+}
+
+.fullcol p {
+	margin-left: 20px;
+	letter-spacing: 1px;
+	font-size: 16px;
+}
+
+footer {
+	position: relative;
+	text-align: center;
+	margin: 0 auto;
+	clear: both;
+	padding-top: 0px;
+	padding-bottom: 5px;
+	background-color: black;
+	color: #999999;
+	width: 100%;
+	white-space: nowrap;
+}
+
+footer .copyright {
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	display: inline-block;
+}
+
+footer .button {
+	margin: 0;
+	display: inline-block;
+	text-transform: uppercase;
+	
+}
+
+footer .button  h4 {
+	display: block;
+	text-align: center;
+	color: #999999;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 20px;
+	padding: 5px 10px 5px 10px;
+	border: 2px solid #999999;
+	border-radius: 5px;
+}
+
+footer .button h4:hover {
+	background-color: #999999;
+	color: black;
+}
+
+footer .social {
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+	display: inline-block;
+	
+}
+
+

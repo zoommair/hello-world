@@ -1,0 +1,85 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>DJ Zoommair</title>
+	<meta name="description" content="DJ Zoommair">
+	<meta name="author" content="Zoommair">
+	
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+	<header>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Services</a></li>
+				<li><a href="#">Media Gallery</a></li>
+				<li><a href="#">Request Estimate</a></li>
+				<li><a href="#">Contact</a></li>
+		</nav>	
+	</header>
+	
+	<div class="hero" id="hero">
+		<div class="heropic">
+			<img src="img/heropic.jpg">
+				<div class="herocontent">
+				<h1>DJ Zoommair</h1>
+				<h2>Book Zoommair</h2>
+				<h2>Music & Mixes</h2>
+				</div>
+				
+				<div class="herowidgets">
+					<div class="herowidgcol">
+						<iframe width="300" height="180" src="https://www.mixcloud.com/widget/iframe/?embed_type=widget_standard&amp;embed_uuid=127156c7-f4cc-40b0-ad75-aace834d5b0d&amp;feed=https%3A%2F%2Fwww.mixcloud.com%2Fzoommair%2Fbreak-your-back-electrohouse-march-2015-mix-by-zoommair%2F&amp;hide_artwork=1&amp;hide_cover=1&amp;hide_tracklist=1&amp;light=1&amp;replace=0" frameborder="0"></iframe><div style="height: 3px; width: 292px;"></div><p style="display: inline-block; font-size: 11px; font-family: 'Open Sans', Helvetica, Arial, sans-serif; margin: 0px; padding: 3px 4px; color: rgb(153, 153, 153); width: 292px;"><a href="https://www.mixcloud.com/zoommair/break-your-back-electrohouse-march-2015-mix-by-zoommair/?utm_source=widget&amp;utm_medium=web&amp;utm_campaign=base_links&amp;utm_term=resource_link" target="_blank" style="color:#808080; font-weight:bold;">Break Your Back Electrohouse March 2015 Mix - by ZoommaiR</a><span> by </span><a href="https://www.mixcloud.com/zoommair/?utm_source=widget&amp;utm_medium=web&amp;utm_campaign=base_links&amp;utm_term=profile_link" target="_blank" style="color:#808080; font-weight:bold;">Zoommair</a><span> on </span><a href="https://www.mixcloud.com/?utm_source=widget&amp;utm_medium=web&amp;utm_campaign=base_links&amp;utm_term=homepage_link" target="_blank" style="color:#808080; font-weight:bold;"> Mixcloud</a></p><div style="clear: both; height: 3px; width: 292px;"></div>
+					</div>
+					
+					<div class="herowidgcol">
+						<iframe width="300" height="180" src="https://www.mixcloud.com/widget/iframe/?embed_type=widget_standard&amp;embed_uuid=127156c7-f4cc-40b0-ad75-aace834d5b0d&amp;feed=https%3A%2F%2Fwww.mixcloud.com%2Fzoommair%2Fbreak-your-back-electrohouse-march-2015-mix-by-zoommair%2F&amp;hide_artwork=1&amp;hide_cover=1&amp;hide_tracklist=1&amp;light=1&amp;replace=0" frameborder="0"></iframe><div style="height: 3px; width: 292px;"></div><p style="display: inline-block; font-size: 11px; font-family: 'Open Sans', Helvetica, Arial, sans-serif; margin: 0px; padding: 3px 4px; color: rgb(153, 153, 153); width: 292px;"><a href="https://www.mixcloud.com/zoommair/break-your-back-electrohouse-march-2015-mix-by-zoommair/?utm_source=widget&amp;utm_medium=web&amp;utm_campaign=base_links&amp;utm_term=resource_link" target="_blank" style="color:#808080; font-weight:bold;">Break Your Back Electrohouse March 2015 Mix - by ZoommaiR</a><span> by </span><a href="https://www.mixcloud.com/zoommair/?utm_source=widget&amp;utm_medium=web&amp;utm_campaign=base_links&amp;utm_term=profile_link" target="_blank" style="color:#808080; font-weight:bold;">Zoommair</a><span> on </span><a href="https://www.mixcloud.com/?utm_source=widget&amp;utm_medium=web&amp;utm_campaign=base_links&amp;utm_term=homepage_link" target="_blank" style="color:#808080; font-weight:bold;"> Mixcloud</a></p><div style="clear: both; height: 3px; width: 292px;"></div>
+					</div>
+					
+					<div class="herwidgcol">
+						<iframe width="300" height="180" src="https://www.mixcloud.com/widget/iframe/?embed_type=widget_standard&amp;embed_uuid=127156c7-f4cc-40b0-ad75-aace834d5b0d&amp;feed=https%3A%2F%2Fwww.mixcloud.com%2Fzoommair%2Fbreak-your-back-electrohouse-march-2015-mix-by-zoommair%2F&amp;hide_artwork=1&amp;hide_cover=1&amp;hide_tracklist=1&amp;light=1&amp;replace=0" frameborder="0"></iframe><div style="height: 3px; width: 292px;"></div><p style="display: inline-block; font-size: 11px; font-family: 'Open Sans', Helvetica, Arial, sans-serif; margin: 0px; padding: 3px 4px; color: rgb(153, 153, 153); width: 292px;"></p><div style="clear: both; height: 3px; width: 292px;"></div>
+					</div>
+				</div>
+		</div>
+	</div>
+	
+	<div class="row" id="aboutme">
+		<div class="fullcol">
+			<h1>About Zoommair</h1>
+			<p>The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.</p>
+			
+		</div>
+	</div>
+	
+
+	<footer>
+		<div class="copyright">
+		DJ Zoommair &copy; 2016. All rights reserved. 
+		<br>- Site by Zoommair 
+		</div>
+		
+		<div class="button">
+			<h4>Book Zoommair</h4>
+		</div>
+		
+		<div class="social">
+		<a href="#"><img src="img/spriteSocialfb.png"></a>
+		<a href="#"><img src="img/spriteSocialmc.png"></a>
+		<a href="#"><img src="img/spriteSocialyt.png"></a>
+		<a href="#"><img src="img/spriteSocialtw.png"></a>
+		</div>
+		
+		
+		
+	</footer>
+</body>
+
+</html>
+
