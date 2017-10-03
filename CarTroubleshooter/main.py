@@ -23,6 +23,18 @@ class MyCar:
     def get_pump(self):
         return self.pumpok
 
+    def ask_fixed(self):
+        x = input("Does it work now? Yes or No?\n")
+        if x.lower() == 'y':
+            car.carFixed = True
+            print("Awesome! We're done here!\n")
+        elif x.lower() == 'n':
+            print("That's too bad! Next test then...\n")
+        else:
+            print("I'm sorry, I don't know that input...\n")
+            ask_fixed()
+
+
 # add My Person class with attributes for tools like hasVoltmeter, hasSparktester, hasComptester, hasFueltester
 # run tests only if equipped with these tools, otherwise offer alternative
 
@@ -66,6 +78,7 @@ def check_tools():
 
     print("Excellent, moving on!\n")
 
+
 def check_corrosion(answer):
     if answer == 'no' or answer == 'No' or answer == 'n' or answer == 'N':
         print("That could be a problem! Make a paste out of baking soda and distilled water and apply.\n")
@@ -106,6 +119,7 @@ def no_power_troubleshoot():
         print("Try starting the car now!\n")
         y = input("Did it work now? Y or N... \n")
         if y == 'y' or y == 'Y':
+            car.carFixed = True
             print("Great! We're done here!\n")
         elif y == 'n' or y == 'N':
             print("Ok, let's go back\n")
@@ -159,7 +173,6 @@ def turn_over():
         fuel_pump_press()  # Fuel Pressure
         spark_test()  # Spark Test
         comp_test()  # Compression test
-
 
     elif x == 'd' or x == 'D':
         print("If Pump Ok is False, start with Fuel Pump Voltage Test")
@@ -259,10 +272,10 @@ def ecuDiag():
     x = input("Y or N")
     if x.lower() == 'y':
         print("Replace ECU\n")
-        # replace_ecu()
+        replace_ecu()
     elif x.lower() == 'n':
         print("Replace Harness\n")
-        # replace_harness()
+        replace_harness()
     else:
         print("Come again?\n")
         ecuDiag()
@@ -287,46 +300,86 @@ def ecuDiag():
 
     input("Exiting ECU Diag - Press Enter to continue...\n")
 
+
 def check_starter():
     print("Might be the Starter.")
     print("Check Starter...\n")
 
-    input()
+    car.ask_fixed()
+
+    if car.carFixed is False:
+        print("If all it does it click when you have check the starter, then there is something else wrong...\n")
+        print("It was most likely the starter, but if you would like to continue testing other components, it might\n"
+              "be the ECU.")
+        x = input("Would you like to try diagnosing the ECU?\n")
+        while True:
+            if x.lower() == 'y':
+                ecuDiag()
+                break
+            elif x.lower() == 'n':
+                print("Ok, Exiting then...\n")
+                break
+
+            print("Come again big fudge?\n")
+            x = input("Y or N?\n")
+
+    else:
+        input("Exiting Check_Starter function... Press Enter to Continue")
+
 
 def fuel_pump_volt():
     print("Might be the Fuel Pump.")
     print("Check Fuel Pump Voltage...\n")
-
-    input()
+    car.ask_fixed()
+    input("Press Enter to continue...")
 
 def batt_test():
     print("Might be the Battery.")
     print("Check the Battery...\n")
-    input()
+    car.ask_fixed()
+    input("Press Enter to continue...")
 
 def mafs_test():
     print("Might be the MAF sensor.")
     print("Check the MAF sensor...\n")
-    input()
+    car.ask_fixed()
+    input("Press Enter to continue...")
 
 def alt_test():
     print("Might be the alternator.")
     print("Check the Alternator...\n")
-    input()
+    car.ask_fixed()
+    input("Press Enter to continue...")
 
 def spark_test():
     print("Might be the Spark Plugs.")
     print("Check the Spark Plugs...\n")
-    input()
+    car.ask_fixed()
+    input("Press Enter to continue...")
 
 def comp_test():
     print("Might be low compression.")
     print("Check Cylinder Compression...\n")
-    input()
+    car.ask_fixed()
+    input("Press Enter to continue...")
 
 def fuel_pump_press():
     print("Might be low fuel pressure or clogged fuel filter.")
     print("Check the Fuel Pressure...\n")
+    car.ask_fixed()
+    input("Press Enter to continue...")
+
+def replace_harness():
+    print("Might be the Wiring Harness.")
+    print("Replace the Wiring Harness...\n")
+    car.ask_fixed()
+    input("Press Enter to continue...")
+
+def replace_ecu():
+    print("Might be the ECU.")
+    print("Replace the ECU...\n")
+    car.ask_fixed()
+    input("Press Enter to continue...")
 
 
 # ---Start of Program---
@@ -350,13 +403,14 @@ print("C: I get power and can hear the fuel pump prime.\n")
 
 second_question(input("Select the Best Answer \n"))
 
+
 while car.carFixed is False:
     turn_over()
     break
 
 print("Congratulations! I hope this program helped you fix your car!")
 print("If it didn't, oh well, I'm sorry, this app is still in early stages.\n")
-print("Support development of this app by leaving feedback. Thanks for using CarTroubleshooter 0.1a\n\n")
+print("Support development of this app by leaving feedback. Thanks for using CarTroubleshooter 0.2a\n\n")
 
 print("End of Line...")
 input()
