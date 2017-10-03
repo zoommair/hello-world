@@ -32,7 +32,7 @@ class MyCar:
             print("That's too bad! Next test then...\n")
         else:
             print("I'm sorry, I don't know that input...\n")
-            ask_fixed()
+            self.ask_fixed()
 
 
 # add My Person class with attributes for tools like hasVoltmeter, hasSparktester, hasComptester, hasFueltester
@@ -271,16 +271,16 @@ def ecuDiag():
           "Is the ECU getting power?\n")
     x = input("Y or N")
     if x.lower() == 'y':
-        print("Replace ECU\n")
+        print("ECU\n")
         replace_ecu()
     elif x.lower() == 'n':
-        print("Replace Harness\n")
+        print("Harness\n")
         replace_harness()
     else:
         print("Come again?\n")
         ecuDiag()
 
-    print("Do you have power now?\n")
+    print("Do you have power to electronics?\n")
 
     x = input("Y or N\n")
     while True:
@@ -372,14 +372,14 @@ def fuel_pump_press():
 def replace_harness():
     print("Might be the Wiring Harness.")
     print("Replace the Wiring Harness...\n")
-    car.ask_fixed()
-    input("Press Enter to continue...")
+
+    input("Press Enter to continue...\n")
 
 def replace_ecu():
     print("Might be the ECU.")
     print("Replace the ECU...\n")
-    car.ask_fixed()
-    input("Press Enter to continue...")
+
+    input("Press Enter to continue...\n")
 
 
 # ---Start of Program---
@@ -409,7 +409,7 @@ while car.carFixed is False:
     break
 
 print("Congratulations! I hope this program helped you fix your car!")
-print("If it didn't, oh well, I'm sorry, this app is still in early stages.\n")
+print("If it didn't, oh well, I'm sorry, this app is still in its early stages.\n")
 print("Support development of this app by leaving feedback. Thanks for using CarTroubleshooter 0.2a\n\n")
 
 print("End of Line...")
