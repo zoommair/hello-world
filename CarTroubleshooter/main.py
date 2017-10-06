@@ -49,28 +49,31 @@ class MyPerson:
 # ---Global Functions
 
 def check_tools():
-    print("Firstly, let's take account of what tools you have...\n")
+    print("Firstly, let's take account of what tools you have...\n"
+          "If you don't have a certain tool, or don't know what tool we are referring to,\n"
+          "do not worry! We will offer tests and solutions even if you don't have the right tools.\n"
+          "Answer Yes or No, or just type Y or N, then enter to answer the questions.\n")
 
     x = input("Do you have a Voltmeter?\n")
-    if x.lower() == 'y':
+    if x.lower() == 'y' or x.lower() == 'yes':
         me.hasVolt = True
         print("Voltmeter set to ", me.hasVolt, "\n")
     else:
         print("Voltmeter set to ", me.hasVolt, "\n")
     x = input("Do you have a Spark Plug Wire Tester?\n")
-    if x.lower() == 'y':
+    if x.lower() == 'y' or x.lower() == 'yes':
         me.hasSpark = True
         print("Spark Plug Wire Tester set to ", me.hasSpark, "\n")
     else:
         print("Spark Plug Wire Tester set to ", me.hasSpark, "\n")
     x = input("Do you have a Compression Tester?\n")
-    if x.lower() == 'y':
+    if x.lower() == 'y' or x.lower() == 'yes':
         me.hasComp = True
         print("Compression Tester set to ", me.hasComp, "\n")
     else:
         print("Compression Tester set to ", me.hasComp, "\n")
     x = input("Do you have a Fuel Pressure Tester\n")
-    if x.lower() == 'y':
+    if x.lower() == 'y' or x.lower() == 'yes':
         me.hasFuel = True
         print("Fuel Pressure Tester set to ", me.hasFuel, "\n")
     else:
@@ -169,10 +172,18 @@ def turn_over():
             fuel_pump_volt()
             break
 
-        mafs_test()  # MAFS check
-        fuel_pump_press()  # Fuel Pressure
-        spark_test()  # Spark Test
-        comp_test()  # Compression test
+        while car.carFixed is False:
+            mafs_test()  # MAFS check
+            break
+        while car.carFixed is False:
+            fuel_pump_press()  # Fuel Pressure
+            break
+        while car.carFixed is False:
+            spark_test()  # Spark Test
+            break
+        while car.carFixed is False:
+            comp_test()  # Compression test
+            break
 
     elif x == 'd' or x == 'D':
         print("If Pump Ok is False, start with Fuel Pump Voltage Test")
@@ -182,21 +193,43 @@ def turn_over():
             fuel_pump_volt()
             break
 
-        batt_test()  # Battery Test
-        mafs_test()  # MAFS Check
-        spark_test()  # Spark Test
-        comp_test()  # Compression
-        fuel_pump_press()  # Fuel Pressure
+        while car.carFixed is False:
+            batt_test()  # Battery Test
+            break
+        while car.carFixed is False:
+            mafs_test()  # MAFS Check
+            break
+        while car.carFixed is False:
+            spark_test()  # Spark Test
+            break
+        while car.carFixed is False:
+            comp_test()  # Compression
+            break
+        while car.carFixed is False:
+            fuel_pump_press()  # Fuel Pressure
+            break
 
     elif x == 'e' or x == 'E':
         print("Mafs check,  Spark & Compression, Fuel Pressure")
 
-        batt_test()  # Battery Test
-        mafs_test()  # MAFS check
-        alt_test()  # Alternator
-        spark_test()  # Spark Test
-        comp_test()  # Compression
-        fuel_pump_press()  # Fuel Pressure
+        while car.carFixed is False:
+            batt_test()  # Battery Test
+            break
+        while car.carFixed is False:
+            mafs_test()  # MAFS check
+            break
+        while car.carFixed is False:
+            alt_test()  # Alternator
+            break
+        while car.carFixed is False:
+            spark_test()  # Spark Test
+            break
+        while car.carFixed is False:
+            comp_test()  # Compression
+            break
+        while car.carFixed is False:
+            fuel_pump_press()  # Fuel Pressure
+            break
 
     elif x == 'f' or x == 'F':
         print("Awesome, exiting!\n")
@@ -246,10 +279,18 @@ def jumpstart2():
             fuel_pump_volt()
             break
 
-        mafs_test()  # Mafs check
-        fuel_pump_press()  # Fuel Pressure
-        spark_test()  # Spark
-        comp_test()  # Compression
+        while car.carFixed is False:
+            mafs_test()  # Mafs check
+            break
+        while car.carFixed is False:
+            fuel_pump_press()  # Fuel Pressure
+            break
+        while car.carFixed is False:
+            spark_test()  # Spark
+            break
+        while car.carFixed is False:
+            comp_test()  # Compression
+            break
 
     elif x.lower() == 'c':
         print("Awesome!!! \n")
@@ -291,7 +332,7 @@ def ecuDiag():
             break
         elif x.lower() == 'n':
             print("I'm sorry, if there's still no power, I'm at a loss of words...\n"
-                  "If the fuses, battery, ecu, and wiring harness are all OK, then you should have at least electricity.\n"
+                  "If the fuses, battery, ecu, and wiring are all OK, then you should have at least electricity.\n"
                   "I'm Sorry, but looks like We're out of the scope of what I can offer at the moment....\n")
             car.carFixed = True
             break
@@ -410,13 +451,8 @@ while car.carFixed is False:
 
 print("Congratulations! I hope this program helped you fix your car!")
 print("If it didn't, oh well, I'm sorry, this app is still in its early stages.\n")
-print("Support development of this app by leaving feedback. Thanks for using CarTroubleshooter 0.2a\n\n")
+print("Support development of this app by leaving feedback. Thanks for using CarTroubleshooter 0.3a\n\n")
 
 print("End of Line...")
 input()
-
-
-
-
-
 
