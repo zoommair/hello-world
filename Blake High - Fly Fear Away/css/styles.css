@@ -11,20 +11,24 @@ body {
 	margin: 0 auto;
 	box-shadow: 3px 0px 2px #888888, -2px 0px 1px #888888;
 	padding: 0;
-	
+
 }
 
 header {
 	z-index: 999;
 	position: fixed;
-	margin: 0;
 	background-color: #000066;
 	width: 100%;
 	max-width: 1440px;
 	box-shadow: 0px 1px 10px #888888;
+
+
 }
 header img {
-	height: 50px;
+	float: left;
+	display: block;
+	height: 60px;
+
 }
 header h1{
 	margin: 0;
@@ -73,12 +77,14 @@ nav ul li a {
 	position: relative;
 	padding-top: 50px;
 	background-color: white;
-	width: 100%; 
+	width: 100%;
 	background: url("../img/airplane1.png") no-repeat 50% 50% fixed;
 	background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	-webkit-background-size: cover; 
+	-webkit-background-size: cover;
+	overflow-x: hidden;
+
 }
 
 
@@ -89,25 +95,28 @@ nav ul li a {
 	height: 575px;
 	margin-bottom: 0;
 	padding-bottom: 0;
-	
+	animation-delay: 0.5s;
+	-webkit-animation-delay: 0.5s;
 }
 
 #hero img{
 	margin-bottom: 0;
 	padding-bottom: 0;
 	max-height: 500px;
-	object-fit: contain;	
-	
+	object-fit: contain;
+
 }
 
 
 #hero .tagline {
+	z-index: 500;
 	text-align: right;
 	position: absolute;
 	display: inline-block;
 	right: 3%;
 	top: 75px;
-	
+	animation-delay: 0.5s;
+	-webkit-animation-delay: 0.5s;
 }
 
 #hero h1 {
@@ -118,7 +127,7 @@ nav ul li a {
 	letter-spacing: 3px;
 	font-style: italic;
 	font-weight: bold;
-	
+
 }
 
 #hero .videobox {
@@ -137,7 +146,7 @@ nav ul li a {
 	color:  black;
 	letter-spacing: 1px;
 	display: inline-block;
-	padding: 1px 15px 1px 15px; 
+	padding: 1px 15px 1px 15px;
 	border: 3px solid black;
 	box-shadow: 0px 5px 5px #000000;
 	border-radius: 1px;
@@ -152,7 +161,7 @@ nav ul li a {
 	margin: 0;
 	padding-top: 20px;
 	padding-bottom: 30px;
-	
+
 }
 
 .sectioncontainer h1 {
@@ -165,7 +174,7 @@ nav ul li a {
 	content: '...';
 	display: block;
 	width: 85px;
-	
+
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -192,19 +201,19 @@ nav ul li a {
 	content: '...';
 	display: block;
 	width: 85px;
-	
+
 	position: absolute;
 	left: 0;
 	right: 0;
 	top: 45px;
 	margin: 0 auto;
-	
+
 }
 
 .row {
 	clear: both;
 	width: 100%;
-	
+
 	padding-top: 1px;
 	position: relative;
 }
@@ -215,7 +224,7 @@ nav ul li a {
 	display: inline-block;
 	max-width:30%;
 	min-width: 300px;
-	
+
 }
 
 .col p {
@@ -259,14 +268,14 @@ nav ul li a {
 }
 
 .littlebox p {
-	
+
 	max-width:95%;
 }
 
 .blogbox {
 	text-align: left;
 	padding: 5px;
-	
+
 }
 
 .blogbox h4 {
@@ -289,14 +298,14 @@ footer {
 	padding-bottom: 5px;
 	width: 100%;
 	white-space: nowrap;
-	
+
 	background: url("../img/blue-printfooter.png") no-repeat 50% 50% fixed;
 	background-size: 100%;
 	-moz-background-size: 100%;
 	-o-background-size: 100%;
 	-webkit-background-size: 100%;
-	
-	
+
+
 }
 
 footer .contact {
@@ -318,7 +327,7 @@ footer .social {
 	//background-color: #ccccff;
 	bottom: 10px;
 	display: inline-block;
-	
+
 }
 
 footer img {
@@ -342,7 +351,7 @@ footer h2 {
 	color:  #ccccff;
 	letter-spacing: 1px;
 	display: inline-block;
-	padding: 1px 15px 1px 15px; 
+	padding: 1px 15px 1px 15px;
 	border: 3px solid #ccccff;
 	box-shadow: 1px 1px 10px #888888;
 	border-radius: 10px;
@@ -367,7 +376,7 @@ footer h2 {
 	color:  black;
 	letter-spacing: 1px;
 	display: inline-block;
-	padding: 1px 15px 1px 15px; 
+	padding: 1px 15px 1px 15px;
 	border: 3px solid black;
 	box-shadow: 0px 5px 5px #000000;
 	border-radius: 1px;
