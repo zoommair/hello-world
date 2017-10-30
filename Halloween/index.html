@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+    <title>Happy Halloween from Umair</title>
+    <meta name="description" content="Happy Halloween from Umair">
+    <meta name="author" content="Umair" >
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animate.css">
+
+    <script src="wow.js"></script>
+    <script>
+    new WOW().init();
+    </script>
+
+
+</head>
+
+<body>
+  <audio autoplay>
+    <source src="thunder.mp3">
+  </audio>
+
+  <div class="fullscreen" id="house">
+    <div class="wow fadeIn" data-wow-delay="2s" id="door">
+      <h1>Enter</h1>
+    </div>
+  </div>
+
+
+  <div id="tvOff">
+    <img src="tv.png">
+  </div>
+
+  <div id="tvOn">
+    <img src="tvon.png" onClick="openScream()">
+  </div>
+
+<div class="fullscreen" id="scary">
+  <div ondblclick="reset()" id="happy">
+    <h1 class="wow bounceInUp" data-wow-delay="3s">HAPPY HALLOWEEN!!!</h1>
+  </div>
+</div>
+
+
+<audio id="enterSounds" loop>
+  <source src="ambient3.mp3">
+</audio>
+<audio id="doorSound">
+  <source src="door.mp3">
+</audio>
+<audio id="violinSound" loop>
+  <source src="violins.ogg" type="audio/ogg"/>
+</audio>
+<audio id="songSound">
+  <source src="song.mp3">
+</audio>
+
+<audio id="staticSound" loop>
+  <source src="static2.mp3">
+</audio>
+
+<audio id="scream">
+  <source src="scream.wav">
+</audio>
+<audio id="scream2">
+  <source src="scream2.mp3">
+</audio>
+<audio id="scream3">
+  <source src="scream3.wav">
+</audio>
+<audio id="laugh">
+  <source src="laugh.mp3">
+</audio>
+
+<script>
+  document.getElementById('door').onclick = function() {
+    document.getElementById('house').style.display ='none';
+    document.getElementById('enterSounds').play();
+    document.getElementById('doorSound').play();
+    document.getElementById('violinSound').play();
+    document.getElementById('songSound').play();
+    setTimeout(tvOn, 15000);
+  };
+
+  function tvOn() {
+    document.getElementById('tvOn').style.display='block';
+    document.getElementById('staticSound').play();
+  };
+
+    document.getElementById('tvOn').onclick = function() {
+      document.getElementById('staticSound').pause();
+      document.getElementById('enterSounds').pause();
+      document.getElementById('violinSound').pause();
+      document.getElementById('songSound').pause();
+      document.getElementById('scary').style.display = "table";
+      document.getElementById('scream').play();
+      document.getElementById('scream2').play();
+      document.getElementById('scream3').play();
+      setTimeout(laughOn, 3000);
+    };
+
+    function laughOn() {
+      document.getElementById('laugh').play();
+    };
+
+</script>
+
+</body>
+</html>

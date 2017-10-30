@@ -1,0 +1,89 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: url(indoors.jpeg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.fullscreen {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+}
+
+.object {
+
+
+}
+
+#house {
+  position: absolute;
+  z-index: 500;
+  background-color: black;
+  background: url(house.jpg) no-repeat 50% 50%;
+  background-size: cover;
+  display: table;
+
+}
+
+#door {
+  position: absolute;
+  top: 59%;
+  left: 47%;
+  width: 6%;
+  height: 31%;
+  box-shadow: 2px 2px 5px #888888;
+
+}
+
+#door h1 {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  color: red;
+  font-size: 2vw;
+}
+
+#tvOn {
+  position: absolute;
+  top: 60%;
+  left: 10%;
+  display: none;
+}
+
+#tvOn img {
+  max-width: 200px;
+
+}
+
+#tvOff {
+  position: absolute;
+  top: 60%;
+  left: 10%;
+}
+
+#tvOff img {
+  max-width: 200px;
+}
+
+#happy h1 {
+  color: red;
+  position: absolute;
+  bottom: 10%;
+  text-align: center;
+  width: 100%;
+  font-size: 5vw;
+}
+
+#scary {
+  position: fixed;
+  background: url(face.jpg) no-repeat 50% 50%;
+  background-size: cover;
+  display: table;
+  display: none;
+}
